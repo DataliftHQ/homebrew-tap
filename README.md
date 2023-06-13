@@ -1,5 +1,7 @@
 # Datalift Homebrew Tap
 
+> :warning: Datalift is currently **under heavy development and is not considered stable yet**. This means that there may be bugs or unexpected behavior, and we don't recommend using it in production.
+
 ## What is Homebrew?
 
 Package manager for macOS (or Linux), see more at https://brew.sh
@@ -14,24 +16,24 @@ See more at https://docs.brew.sh/Taps
 ## How do I install packages from here?
 
 ```sh
-brew install datalift/tap/name
+brew install DataliftHQ/tap/name
 ```
 
 You can also only add the tap which makes formulae within it
 available in search results (`brew search` output):
 
 ```sh
-brew tap datalift/tap
+brew tap DataliftHQ/tap
 ```
 
 Note: to clone the tap via SSH you will need to use:
 
 ```sh
-brew tap datalift/tap https://github.com/DataliftHQ/homebrew-tap
+brew tap DataliftHQ/tap https://github.com/DataliftHQ/homebrew-tap
 ```
 
 While you may search across taps, it is necessary to always use
-fully qualified name (incl. the `datalift/tap/` prefix)
+fully qualified name (incl. the `DataliftHQ/tap/` prefix)
 when refering to formulae in external taps such as this one
 outside of search.
 
@@ -40,7 +42,7 @@ outside of search.
 With the following commands, you can install the latest generally available (GA) version of each product:
 ```sh
 # Formulae
-brew install datalift/tap/datalift
+brew install DataliftHQ/tap/datalift
 ```
 
 Prereleases (including as alpha's, beta's, and release candidates) will not be available in this tap.
