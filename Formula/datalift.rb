@@ -5,16 +5,13 @@
 class Datalift < Formula
   desc "Datalift CLI utility"
   homepage "https://datalift.io/"
-  version "0.1.0"
-  license "MPL-2.0"
-
-  depends_on "go" => :optional
-  depends_on "git"
+  version "1.0.0"
+  license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/DataliftHQ/datalift-cli/releases/download/v0.1.0/datalift-0.1.0_darwin_amd64.tar.gz"
-      sha256 "08b63642afc5b03ef6e9028febc4a1ac749dcd18d1c8286ceb145495abf38d1e"
+    if Hardware::CPU.arm?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_arm64.tar.gz"
+      sha256 "e1bcbdc73e4ac52ae145fa22cb599761a940341d99faea6c34fdc2be7cb88881"
 
       def install
         bin.install "datalift"
@@ -24,9 +21,9 @@ class Datalift < Formula
         man1.install "manpages/datalift.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/DataliftHQ/datalift-cli/releases/download/v0.1.0/datalift-0.1.0_darwin_arm64.tar.gz"
-      sha256 "15d2d5bc91c4f1eab86ee623c133d2c0bc368a3e284ac175cadad1c5b22e244e"
+    if Hardware::CPU.intel?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_amd64.tar.gz"
+      sha256 "0dd79eaaee2444f96ad17693978ecab28f2235653265ef3405b7b1163dc9b871"
 
       def install
         bin.install "datalift"
@@ -40,20 +37,8 @@ class Datalift < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DataliftHQ/datalift-cli/releases/download/v0.1.0/datalift-0.1.0_linux_arm64.tar.gz"
-      sha256 "e3cfc242006130be7cbded90e6a2d4710660c334f02b356b51e3a32d24681b75"
-
-      def install
-        bin.install "datalift"
-        bash_completion.install "completions/datalift.bash" => "datalift"
-        zsh_completion.install "completions/datalift.zsh" => "_datalift"
-        fish_completion.install "completions/datalift.fish"
-        man1.install "manpages/datalift.1.gz"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/DataliftHQ/datalift-cli/releases/download/v0.1.0/datalift-0.1.0_linux_arm.tar.gz"
-      sha256 "97d64c22a730948391251859adf8b968efae629650114134e83fc3c6e2a3083e"
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_arm64.tar.gz"
+      sha256 "63985a2338b696866e9fb3e511e8627f84a7f1432702f100ca7e06e57b30f64c"
 
       def install
         bin.install "datalift"
@@ -64,8 +49,8 @@ class Datalift < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/DataliftHQ/datalift-cli/releases/download/v0.1.0/datalift-0.1.0_linux_amd64.tar.gz"
-      sha256 "35fb1651e52fb480cfd7655052e6db77852782dc6f1bd51fa92f57de64fe4e54"
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_amd64.tar.gz"
+      sha256 "16cd6a879c916a19466b3d639155939b94e1f5c2b5c3ef080228938cc4b53539"
 
       def install
         bin.install "datalift"
