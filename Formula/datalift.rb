@@ -11,7 +11,7 @@ class Datalift < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_arm64.tar.gz"
-      sha256 "e1bcbdc73e4ac52ae145fa22cb599761a940341d99faea6c34fdc2be7cb88881"
+      sha256 "fc5842fb1f297b98dcd45f4b8003b1a3fd767abd780421966bb6bb1df03f190d"
 
       def install
         bin.install "datalift"
@@ -23,7 +23,7 @@ class Datalift < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_amd64.tar.gz"
-      sha256 "0dd79eaaee2444f96ad17693978ecab28f2235653265ef3405b7b1163dc9b871"
+      sha256 "7d2ab2c6e955894818bf89b9fbd988ae2e68e6daa4301cd739023090ca19bc23"
 
       def install
         bin.install "datalift"
@@ -36,9 +36,9 @@ class Datalift < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_arm64.tar.gz"
-      sha256 "63985a2338b696866e9fb3e511e8627f84a7f1432702f100ca7e06e57b30f64c"
+    if Hardware::CPU.intel?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_amd64.tar.gz"
+      sha256 "2c2a025b602eb713297e73c5fabdd47388d0449e2e2cbe705917ed400ef31a65"
 
       def install
         bin.install "datalift"
@@ -48,9 +48,9 @@ class Datalift < Formula
         man1.install "manpages/datalift.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_amd64.tar.gz"
-      sha256 "16cd6a879c916a19466b3d639155939b94e1f5c2b5c3ef080228938cc4b53539"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_arm64.tar.gz"
+      sha256 "2a93c7c9a060ca1204bc7a4dd4c9a02dde1f7c2d6095e9970abd7703daa80ffc"
 
       def install
         bin.install "datalift"
