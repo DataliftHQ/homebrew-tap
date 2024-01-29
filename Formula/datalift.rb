@@ -11,10 +11,11 @@ class Datalift < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_arm64.tar.gz"
-      sha256 "fc5842fb1f297b98dcd45f4b8003b1a3fd767abd780421966bb6bb1df03f190d"
+      sha256 "b905970210f4eb3b4127227d877c1a85c4a008685b91a33b333eff6c46e80143"
 
       def install
         bin.install "datalift"
+        bin.install_symlink "datalift" => "dl"
         bash_completion.install "completions/datalift.bash" => "datalift"
         zsh_completion.install "completions/datalift.zsh" => "_datalift"
         fish_completion.install "completions/datalift.fish"
@@ -23,10 +24,11 @@ class Datalift < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_darwin_amd64.tar.gz"
-      sha256 "7d2ab2c6e955894818bf89b9fbd988ae2e68e6daa4301cd739023090ca19bc23"
+      sha256 "8537949e8d1effbdbc011eb57916bc036fb9aa4ab4cf781529658eac11224a19"
 
       def install
         bin.install "datalift"
+        bin.install_symlink "datalift" => "dl"
         bash_completion.install "completions/datalift.bash" => "datalift"
         zsh_completion.install "completions/datalift.zsh" => "_datalift"
         fish_completion.install "completions/datalift.fish"
@@ -36,24 +38,26 @@ class Datalift < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_amd64.tar.gz"
-      sha256 "2c2a025b602eb713297e73c5fabdd47388d0449e2e2cbe705917ed400ef31a65"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_arm64.tar.gz"
+      sha256 "bb3f7edd84a6278c6e8f11d74e5af42f771abd598a89d8c114e1cbef079842ef"
 
       def install
         bin.install "datalift"
+        bin.install_symlink "datalift" => "dl"
         bash_completion.install "completions/datalift.bash" => "datalift"
         zsh_completion.install "completions/datalift.zsh" => "_datalift"
         fish_completion.install "completions/datalift.fish"
         man1.install "manpages/datalift.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_arm64.tar.gz"
-      sha256 "2a93c7c9a060ca1204bc7a4dd4c9a02dde1f7c2d6095e9970abd7703daa80ffc"
+    if Hardware::CPU.intel?
+      url "https://github.com/DataliftHQ/datalift/releases/download/v1.0.0/datalift-1.0.0_linux_amd64.tar.gz"
+      sha256 "a26d0cf807c6b44f26cb06bf58a00dddc8ce576bcd0b937a5eaf87ce74d752ef"
 
       def install
         bin.install "datalift"
+        bin.install_symlink "datalift" => "dl"
         bash_completion.install "completions/datalift.bash" => "datalift"
         zsh_completion.install "completions/datalift.zsh" => "_datalift"
         fish_completion.install "completions/datalift.fish"
