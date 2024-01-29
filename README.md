@@ -1,7 +1,5 @@
 # Datalift Homebrew Tap
 
-> :warning: Datalift is currently **under heavy development and is not considered stable yet**. This means that there may be bugs or unexpected behavior, and we don't recommend using it in production.
-
 ## What is Homebrew?
 
 Package manager for macOS (or Linux), see more at https://brew.sh
@@ -46,3 +44,4 @@ brew install DataliftHQ/tap/datalift
 ```
 
 Prereleases (including as alpha's, beta's, and release candidates) will not be available in this tap.
+
