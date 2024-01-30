@@ -40,7 +40,7 @@ outside of search.
 With the following commands, you can install the latest generally available (GA) version of each product:
 ```sh
 # Formulae
-brew install DataliftHQ/tap/datalift
+brew install DataliftHQ/tap/admiral-cli
 ```
 
 Prereleases (including as alpha's, beta's, and release candidates) will not be available in this tap.
