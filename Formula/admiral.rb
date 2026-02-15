@@ -13,7 +13,7 @@ class Admiral < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/DataliftHQ/admiral-cli/releases/download/v0.0.1/admiral-0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "58053af307c4e3866dcd35fe06bcaf040ed3bcb2b78a19286b804eac78c800a3"
+      sha256 "3bfa9bd830c72a82bcd3d2534bc76ebb73da580e3f57293fac9adc5790a0d2fc"
 
       def install
         bin.install "admiral"
@@ -24,7 +24,7 @@ class Admiral < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/DataliftHQ/admiral-cli/releases/download/v0.0.1/admiral-0.0.1_Darwin_arm64.tar.gz"
-      sha256 "9bfa706ea7bbcd8cd055ab154763eb6afaa1143e0442d9ae8d8b1bc327ee3016"
+      sha256 "59bb85f4a8d84b1bb9b5fad0f76d25be8f12b7ba66612fbbda1752b9f1f5e8db"
 
       def install
         bin.install "admiral"
@@ -38,7 +38,7 @@ class Admiral < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/DataliftHQ/admiral-cli/releases/download/v0.0.1/admiral-0.0.1_Linux_x86_64.tar.gz"
-      sha256 "cd06817fe4db4ef44d1eb9ae78cc3186f2b2ca501818d82faa9706334f739433"
+      sha256 "7bf551546f86e6a122f14dea85d98c363c799804a5a6cd78241a1944243dd9e5"
       def install
         bin.install "admiral"
         bash_completion.install "completions/admiral.bash" => "admiral"
@@ -48,7 +48,7 @@ class Admiral < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/DataliftHQ/admiral-cli/releases/download/v0.0.1/admiral-0.0.1_Linux_arm64.tar.gz"
-      sha256 "69cae4c12a50940dcd2fce34abffc844aa05f3ff3c5587f0890ef3828cacd375"
+      sha256 "3ec09d9e6f90eeb10ec05df5c6e65e10cdbc9cd23de3de98f33bb42d033a9204"
       def install
         bin.install "admiral"
         bash_completion.install "completions/admiral.bash" => "admiral"
